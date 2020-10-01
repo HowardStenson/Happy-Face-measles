@@ -4,63 +4,48 @@ int faceX, faceY, faceDiameter;
 int leftEyeX, leftEyeY, leftEyeDiameter;
 int rightEyeX, rightEyeY, rightEyeDiameter;
 int noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
+float FixX11, FixY11, FixX12, FixY12, FixX13, FixY13;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthThick;
 color red = #FF0303;
 color measlesColor = red;
+color white = 255;
+color colorReset = white;
 float measlesX, measlesY, measlesDiameter;
 
 void setup() {
-  size (800,600);
+  size (900, 600);
   //fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
-  //rect();
-  faceX = width/2;
-  faceY = height/2;
-  faceDiameter = height;
-  leftEyeX = width*3/8;
-  leftEyeY = height*1/4;
-  leftEyeDiameter = height/7;
-  rightEyeX = width*5/8;
-  rightEyeY = leftEyeY;
-  rightEyeDiameter = leftEyeDiameter;
-  
-  noseX1 = width/2;
-  noseY1 = height*2/5;
-  noseX2 = width*7/16;
-  noseY2 = height*6/10;
-  noseX3 = width*9/16;
-  noseY3 = noseY2;
-  mouthX1 = leftEyeX;
-  mouthY1 = height*3/4;
-  mouthX2 = rightEyeX;
-  mouthY2 = mouthY1;
-  mouthThick = 10;
-  reset = 1;
-  measlesX = random(width);
-  measlesY = random(height);
-  measlesDiameter =  random(height*1/20, height*1/10);
   //
+  population();
+  //
+  //faceDraw();
+  background(0) ;
   ellipse(faceX, faceY, faceDiameter, faceDiameter);
+}//End setup
+
+void draw() {
+  measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
+  measlesY = random(height);
+  measlesDiameter = random(height*1/-70, height*1/40);
+  fill(measlesColor);
+  //Parameters are randomly set ;)
+  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
+  fill(colorReset);
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
+  triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   strokeWeight(mouthThick);
   line(mouthX1, mouthY1, mouthX2, mouthY2);
   strokeWeight(reset);
-  
-  fill(measlesColor);
-  //Parameters are randonmly set ;)
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  fill(reset);
-}//End setup
-
-void draw() {
-  
 }//End draw
 
 void keyPressed() {
- //Quit Keyboard Button
- if(key == 'q' || key=='Q') { exit(); }//End IF 
+  //Quit Keyboard Button
+  if (key == 'q' || key == 'Q') { 
+    exit();
+  }//End IF
 }//End keypressed
 
 void mousePressed() {
