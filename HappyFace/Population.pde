@@ -26,4 +26,5 @@ void population() {
   mouthY2 = mouthY1;
   mouthThick = 15;
   reset = 1;
+  titleFont = createFont ("Harrington", 55);
 }//End population
