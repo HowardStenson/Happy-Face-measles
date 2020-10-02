@@ -11,11 +11,18 @@ color measlesColor = red;
 color white = 255;
 color colorReset = white;
 float measlesX, measlesY, measlesDiameter;
-
+int buttonX, buttonY, buttonWidth, buttonHeight;
+color buttonColour, yellow, purple;
 void setup() {
   size (900, 600);
   //fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
+ buttonX = width*15/16;
+ buttonY = height*0/14;
+ buttonWidth = width*1/16;
+  buttonHeight = height*1/14;
+ yellow = #F3FC03;
+ purple = #FC03FC;
   //
   population();
   //
@@ -34,11 +41,18 @@ void draw() {
   fill(colorReset);
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
-  triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
+  //triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   strokeWeight(mouthThick);
   line(mouthX1, mouthY1, mouthX2, mouthY2);
   strokeWeight(reset);
+  if (mouseX>buttonX && mouseX<width && mouseY>0 && mouseY<buttonHeight) { //Button Hoverover
+  buttonColour = yellow; //Hoverover
+  } else {
+    buttonColour = purple;
+  }// End IF
+  fill(buttonColour); //Purple all the time, Yellow with Hoverover
+  rect(buttonX, buttonY, buttonWidth, buttonHeight);
 }//End draw
 
 void keyPressed() {
@@ -49,4 +63,7 @@ void keyPressed() {
 }//End keypressed
 
 void mousePressed() {
+  if (mouseX>buttonX && mouseX<width && mouseY>0 && mouseY<buttonHeight) {
+    exit();
+  }//End IF, using mouseX & mouseY
 }//End mousePressed
