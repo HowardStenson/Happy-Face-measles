@@ -43,6 +43,8 @@ void setup() {
 }//End setup
 
 void draw() {
+  //measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
+  //measlesY = random(height);
   measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
   measlesY = random(height);
   measlesDiameter = random(height*1/-70, height*1/40);
@@ -52,7 +54,10 @@ void draw() {
   fill(colorReset);
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
-  //triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
+  triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
+  triangle(FixX21, FixY21, FixX22, FixY22, FixX23, FixY23);
+  triangle(FixX31, FixY31, FixX32, FixY32, FixX33, FixY33);
+  triangle(FixX41, FixY41, FixX42, FixY42, FixX43, FixY43);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
   strokeWeight(mouthThick);
   line(mouthX1, mouthY1, mouthX2, mouthY2);
