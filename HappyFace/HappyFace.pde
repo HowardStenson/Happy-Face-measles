@@ -5,9 +5,14 @@ int leftEyeX, leftEyeY, leftEyeDiameter;
 int rightEyeX, rightEyeY, rightEyeDiameter;
 int noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float FixX11, FixY11, FixX12, FixY12, FixX13, FixY13;
+float FixX21, FixY21, FixX22, FixY22, FixX23, FixY23;
+float FixX31, FixY31, FixX32, FixY32, FixX33, FixY33;
+float FixX41, FixY41, FixX42, FixY42, FixX43, FixY43;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthThick;
 color red = #FF0303;
-color measlesColor = red;
+color black = #030303;
+color measlesColors = red;
+color triagles = black ;
 color white = 255;
 color colorReset = white;
 float measlesX, measlesY, measlesDiameter;
@@ -23,9 +28,9 @@ void setup() {
   size (900, 600);
   //fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
- //String[] fontList = PFont.list(); //To list fonts available on OS
-//println("Start of Console");
-//printArray(fontList); 
+ String[] fontList = PFont.list(); //To list fonts available on OS
+println("Start of Console");
+printArray(fontList); 
   
   
  buttonX = width*15/16;
@@ -43,22 +48,24 @@ void setup() {
 }//End setup
 
 void draw() {
-  //measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
-  //measlesY = random(height);
   measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
   measlesY = random(height);
   measlesDiameter = random(height*1/-70, height*1/40);
-  fill(measlesColor);
+    
+  fill(measlesColors);
   //Parameters are randomly set ;)
   ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
   fill(colorReset);
   ellipse(leftEyeX, leftEyeY, leftEyeDiameter, leftEyeDiameter);
   ellipse(rightEyeX, rightEyeY, rightEyeDiameter, rightEyeDiameter);
-  triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13);
+  
+  triangle(FixX11, FixY11, FixX12, FixY12, FixX13, FixY13); 
   triangle(FixX21, FixY21, FixX22, FixY22, FixX23, FixY23);
   triangle(FixX31, FixY31, FixX32, FixY32, FixX33, FixY33);
   triangle(FixX41, FixY41, FixX42, FixY42, FixX43, FixY43);
   triangle(noseX1, noseY1, noseX2, noseY2, noseX3, noseY3);
+  fill(triagles);
+  
   strokeWeight(mouthThick);
   line(mouthX1, mouthY1, mouthX2, mouthY2);
   strokeWeight(reset);
