@@ -2,12 +2,14 @@ void population() {
   faceX = width/2;
   faceY = height/2;
   faceDiameter = height;
+  //
   leftEyeX = width*3/8;
   leftEyeY = height*1/4;
   leftEyeDiameter = height/7;
   rightEyeX = width*5/8;
   rightEyeY = leftEyeY;
   rightEyeDiameter = leftEyeDiameter;
+  //
   noseX1 = width/2;
   noseY1 = height*2/5;
   noseX2 = width*7/16;
@@ -16,7 +18,7 @@ void population() {
   noseY3 = noseY2;
   //
   FixX11 = width*1/6 ;
-  FixY11 = height*1/300 ;
+  FixY11 =height*1/300;
   FixX12 = width*14/32 ;
   FixY12 = height*1/300;
   FixX13 = width*1/6 ;
@@ -47,4 +49,5 @@ void population() {
   mouthThick = 15;
   reset = 1;
   titleFont = createFont ("Harrington", 55);
+  //
 }//End population
