@@ -8,7 +8,6 @@ float FixX11, FixY11, FixX12, FixY12, FixX13, FixY13;
 float FixX21, FixY21, FixX22, FixY22, FixX23, FixY23;
 float FixX31, FixY31, FixX32, FixY32, FixX33, FixY33;
 float FixX41, FixY41, FixX42, FixY42, FixX43, FixY43; 
-float measlesX2, measlesY2, measlesDiameter2 ;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthThick;
 color red = #FF0303;
 color black = #030303;
@@ -17,13 +16,14 @@ color triagles = black ;
 color white = 255;
 color colorReset = white;
 float measlesX, measlesY, measlesDiameter;
+float measlesX2, measlesY2, measlesDiameter2;
 int buttonX, buttonY, buttonWidth, buttonHeight ;
 color buttonColour, yellow, purple;
 String quit = "X"; 
 PFont titleFont;
 color quitButtonpurple = #2C08FF ;
 color quitButtonColor = quitButtonpurple ;
-float pupliX1, pupliY1, pupliDiameter1  ;
+float pupliX1, pupliY1, pupliDiameter1 ;
 float pupliX2, pupliY2, pupliDiameter2 ;
 
 void setup() {
@@ -49,13 +49,13 @@ void draw() {
   measlesX = random(width*1/2-height*1/2, width*1/2+height*1/2);
   measlesY = random(height);
   measlesDiameter = random(height*1/-70, height*1/40);
+  measlesX2 = random(width*1/2-height*1/2, width*1/2+height*1/2);
+  measlesY2 = random(height);
+  measlesDiameter2 = random(height*1/-70, height*1/40);
   fill(measlesColors);
   //Parameters are randomly set ;)
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
-  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter);
+  ellipse(measlesX, measlesY, measlesDiameter, measlesDiameter) ;
+  ellipse(measlesX2, measlesY2, measlesDiameter2, measlesDiameter2) ;
   fill(colorReset);
   //ellipse(pupliX1, pupliY1, pupliDiameter1);
   //ellipse(pupliX2, pupliY2, pupliDiameter2);
@@ -76,11 +76,11 @@ void draw() {
     fill(buttonColour); //Purple all the time, Yellow with Hoverover
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
     fill(purple);
-textAlign(CENTER, CENTER); 
-//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-textFont(titleFont, 50) ;
-text(quit,buttonX, buttonY, buttonWidth, buttonHeight);
-fill(255); //Reset
+  textAlign(CENTER, CENTER); 
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  textFont(titleFont, 50) ;
+  text(quit,buttonX, buttonY, buttonWidth, buttonHeight);
+  fill(255); //Reset
 }//End draw
 
 void keyPressed() {
