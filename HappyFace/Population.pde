@@ -42,6 +42,13 @@ void population() {
   FixX43 = width*1/6;
   FixY43 = height*20/20;
   //
+  pupliX1 = width*3/8;
+  pupliY1 = height*1/4;
+  pupliDiameter1 = height/8 ;
+  pupliX2 = width*5/8;
+  pupliY2 = leftEyeY ;
+  pupliDiameter2 = height/8 ;
+  //
   mouthX1 = leftEyeX;
   mouthY1 = height*3/4;
   mouthX2 = rightEyeX;
