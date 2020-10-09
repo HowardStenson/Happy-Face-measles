@@ -75,11 +75,11 @@ void draw() {
     }// End IF
     fill(buttonColour); //Purple all the time, Yellow with Hoverover
     rect(buttonX, buttonY, buttonWidth, buttonHeight);
-    fill(purple);
+    fill(0);
   textAlign(CENTER, CENTER); 
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   textFont(titleFont, 50) ;
-  text(quit,buttonX, buttonY, buttonWidth, buttonHeight);
+  text(quit, buttonX, buttonY, buttonWidth, buttonHeight);
   fill(255); //Reset
 }//End draw
 
