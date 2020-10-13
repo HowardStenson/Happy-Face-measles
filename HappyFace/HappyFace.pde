@@ -22,15 +22,15 @@ color buttonColour, yellow, purple;
 String quit = "X"; 
 PFont titleFont;
 color quitButtonpurple = #2C08FF ;
+String[] fontList = PFont.list(); //To list fonts available on OS
 color quitButtonColor = quitButtonpurple ;
-float pupliX1, pupliY1, pupliDiameter1 ;
-float pupliX2, pupliY2, pupliDiameter2 ;
+//int pupliX1, pupliY1, pupliDiameter1 ;
+//int pupliX2, pupliY2, pupliDiameter2 ;
 
 void setup() {
   size (900, 600);
   //fullScreen();
   println("Screen Width is", displayWidth, "Screen Height is", displayHeight);
- String[] fontList = PFont.list(); //To list fonts available on OS
 println("Start of Console");
 printArray(fontList); 
  buttonX = width*15/16;
